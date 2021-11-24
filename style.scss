@@ -6,10 +6,9 @@ body {
   color: $main_color;
   padding: 0;
   margin: 0;
-}
-html {
   min-width: 1440px;
 }
+
 div, p, input, button, form, span, a, ul, li {
   box-sizing: border-box;
 }
@@ -21,13 +20,14 @@ p, h1, h2, h3, h4, h5, h6, ul {
 
 .header {
   background: url('images/background.jpg');
-  min-width: 1440px;
+  background-size: cover;
   &__main {
     display: flex;
   }
   &__container {
     width: 1309px;
     margin: 0 auto;
+    margin-bottom: -148px;
   }
   &__title {
     display: block;
@@ -36,16 +36,16 @@ p, h1, h2, h3, h4, h5, h6, ul {
     width: 676px;
 }
   &__description h2 {
-  display: block;
-  color: $white;
-  font-weight: 600;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-top: 4em;
-  font-size: 25px;
-  letter-spacing: 0.3em;
-  margin-bottom: 62px;
+    display: block;
+    color: $white;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 4em;
+    font-size: 25px;
+    letter-spacing: 0.3em;
+    margin-bottom: 62px;
 }
   &__text {
     color: $white;
@@ -70,7 +70,7 @@ p, h1, h2, h3, h4, h5, h6, ul {
     font-weight: 800;
     color: #2e3034;
     border: none;
-  }
+}
 .nav {
   display: flex;
   list-style: none;
@@ -104,19 +104,18 @@ p, h1, h2, h3, h4, h5, h6, ul {
 }
 .goods {
   background-color: $white;
-  min-width: 1440px;
   &__container {
     width: 1299px;
     margin: 0 auto;
   }
   &__title {
     display: block;
-    margin: -146px 15%;
+    margin: 0 auto;
     width: 820px;
     padding-top: 37px;
   }
   &__text {
-    margin-top: 178px;
+    margin-top: 32px;
     text-align: center;
     font-size: 28px;
   }
@@ -228,6 +227,7 @@ p, h1, h2, h3, h4, h5, h6, ul {
 }
 .about {
   background: url('images/background.jpg');
+  background-size: cover;
   position: relative;
   &__leavers {
     position: absolute;
@@ -258,9 +258,14 @@ p, h1, h2, h3, h4, h5, h6, ul {
   &__pizza {
     display: block;
     margin-left: 22em;
+    position: relative;
+    z-index: 10;
   }
 }
 .reviews {
+    background: white;
+    transform: translateY(-170px);
+    padding-top: 160px;
   &__container {
     margin: 0 auto;
     width: 1181px;
@@ -288,7 +293,7 @@ p, h1, h2, h3, h4, h5, h6, ul {
 .subscribe {
   background-color: $main_color;
   color: $white;
-  padding: 222px 0 241px 0;
+  padding: 61px 0 241px 0;
   position: relative;
   .subscribe-form {
     max-width: 1048px;
@@ -375,9 +380,112 @@ p, h1, h2, h3, h4, h5, h6, ul {
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nav {
+    align-self: center;
+  }
+  .nav-link {
+    font-size: 24px;
+  }
+  .header__main {
+    flex-direction: column;
+  }
+  .logo {
+    transform: translateY(-55px);
+  }
   .header__description {
-    padding-left: 10px;
+    text-align: center;
+    & h2 {
+      margin-top: 2em;
+    }
+  }
+  .header__text {
+    display: none;
+  }
+  .header__title {
+    margin: 0 auto;
+    width: 886px;
+  }
+  .header__image {
+    width: 76%;
+    margin: 0 auto;
+    display: block;
+    padding-top: 84px;
+  }
+  .goods__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .goods__text {
+    margin-top: 80px;
+    & p {
+      font-size: 34px;
+    }
+  }
+  .goods__cards {
+    margin-bottom: 0;
+  }
+  .goods .card {
+    max-width: none;
+    padding-bottom: 70px;
+  }
+  .card__title,
+  .card__text {
+    text-align: center;
+  }
+  .goods .card__image {
+    width: 700px;
+    height: 700px;
+    display: block;
+    margin: 0 auto;
+  }
+  .goods .card__text {
+    font-size: 2em;
+  }
+  .information__text {
+    flex-direction: column;
+    align-items: center;
+    & p {
+      min-width: 716px;
+      text-align: center;
+      font-size: 1.7em;
+    }
+  }
+  .about__text {
+    font-size: 2em;
+    max-width: 30em;
+    margin: 10px auto;
+  }
+  .about__pizza {
+    margin: 0 auto;
+    max-width: 684px;
+  }
+  .reviews__container {
+    flex-direction: column;
+    align-items: center;
+    & .review {
+      max-width: 792px;
+      text-align: center;
+      font-size: 1.7em;
+      padding-top: 100px;
+    }
+  }
+  .reviews__description {
+    margin-bottom: 11px;
+    font-size: 1.9em;
+    font-weight: 500;
+  }
+  .subscribe {
+    padding: 140px 0 196px 0;
+  }
+  .footer__container {
+    padding-top: 191px;
+    padding-bottom: 103px;
   }
 }
 
